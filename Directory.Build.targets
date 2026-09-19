@@ -1,5 +1,7 @@
 <Project>
 
+  <Import Project="$(MSBuildThisFileDirectory)..\..\Directory.Build.targets" Condition="Exists('$(MSBuildThisFileDirectory)..\..\Directory.Build.targets')" />
+
   <PropertyGroup>
     <PublicSign Condition=" '$(AssemblyOriginatorKeyFile)' != '' and '$(OS)' != 'Windows_NT' ">true</PublicSign>
   </PropertyGroup>

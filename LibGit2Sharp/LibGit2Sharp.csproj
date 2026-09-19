@@ -1,9 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\..\MonoDevelop.props" Condition="Exists('..\..\..\MonoDevelop.props')" />
-  <PropertyGroup>
+  <PropertyGroup Condition="Exists('..\..\..\MonoDevelop.props')">
+    <TargetFrameworks>net472</TargetFrameworks>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="!Exists('..\..\..\MonoDevelop.props')">
     <TargetFrameworks>net471;net461;netcoreapp2.0</TargetFrameworks>
     <TargetFramework>net471</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>LibGit2Sharp brings all the might and speed of libgit2, a native Git implementation, to the managed world of .Net and Mono.</Description>
     <Company>LibGit2Sharp contributors</Company>
@@ -16,6 +22,13 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\libgit2sharp.snk</AssemblyOriginatorKeyFile>
+    <AssemblyVersion>0.26.1</AssemblyVersion>
+    <AssemblyFileVersion>0.26.1</AssemblyFileVersion>
+    <AssemblyInformationalVersion>0.26.1</AssemblyInformationalVersion>
+    <FileVersion>0.26.1</FileVersion>
+    <Version>0.26.1</Version>
+    <libgit2_filename>libgit2-71efcb3</libgit2_filename>
+    <libgit2_hash>71efcb31582108be91adf61155927d8bd9bbcfc1</libgit2_hash>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,7 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Nerdbank.GitVersioning" Version="2.1.23" PrivateAssets="all" />
+    <PackageReference Include="Nerdbank.GitVersioning" Version="2.1.23" PrivateAssets="all" Condition="!Exists('..\..\..\MonoDevelop.props')" />
   </ItemGroup>
 
   <ItemGroup Condition="!Exists('..\..\..\MonoDevelop.props')">
