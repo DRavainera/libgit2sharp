@@ -2,8 +2,8 @@
 
   <Import Project="..\..\..\MonoDevelop.props" Condition="Exists('..\..\..\MonoDevelop.props')" />
   <PropertyGroup Condition="Exists('..\..\..\MonoDevelop.props')">
-    <TargetFrameworks>net472</TargetFrameworks>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+    <TargetFramework>net10.0</TargetFramework>
   </PropertyGroup>
   <PropertyGroup Condition="!Exists('..\..\..\MonoDevelop.props')">
     <TargetFrameworks>net471;net461;netcoreapp2.0</TargetFrameworks>
